@@ -7,34 +7,34 @@ import SmoothScrollHero from "@/components/ui/smooth-scroll-hero"
 
 export default function Index() {
   const missionStatement =
-    "В Stride Collective мы верим: движение — это не просто выбор, это образ жизни. Рожденные из духа бегового сообщества, мы объединяем бегунов со всего мира, которых связывает страсть к преодолению границ. Бежишь ли ты навстречу рассвету по городским улицам или покоряешь горные тропы — мы здесь, чтобы вдохновлять тебя. Наше сообщество живет ритмом шагов, силой упорства и радостью общих побед. Присоединяйся к нам — беги не только ради формы, но ради свободы, дружбы и чистой любви к движению."
+    "Спортклуб 40 — это место, где каждый находит свой темп. Мы верим: тренировка на велотренажёре — это не просто кардио. Это удар по стрессу, заряд энергии на весь день и шаг к телу, которым ты гордишься. Неважно, новичок ты или опытный атлет — наши тренеры подберут нагрузку именно под тебя. Здесь, в Перми, мы создали пространство, где хочется возвращаться снова и снова."
 
   const timelineEntries = [
     {
       id: 1,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-RJ3iTXUn5SUexF6nHMZYhMoQLNCboK.png",
-      alt: "Бегунья в художественном размытии движения",
-      title: "Каждый шаг важен",
+      image: "https://cdn.poehali.dev/projects/96b3053c-bb27-41f7-92e0-8d3f8567ba62/files/9c46fa70-a0f1-4791-a740-8baab29a3067.jpg",
+      alt: "Тренировка на велотренажёре",
+      title: "Для любого уровня",
       description:
-        "От первой пробежки вокруг дома до сотого марафона — у каждого бегуна своя история. В Stride Collective мы чествуем новичков, которые впервые шнуруют кроссовки. Твой темп не важен — важна твоя страсть. Чего ты ждешь?",
+        "Никогда не крутил педали на тренажёре? Не страшно. Наши тренеры начнут с азов и доведут тебя до уверенного результата. Уже опытный? Поднимем нагрузку до максимума. В Спортклубе 40 каждый находит свою программу.",
       layout: "left" as const,
     },
     {
       id: 2,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-LN9OPh9hw0b9rwSPRSslHoejcfoKHe.png",
-      alt: "Бегун с решимостью и концентрацией",
-      title: "Найди свой ритм",
+      image: "https://cdn.poehali.dev/projects/96b3053c-bb27-41f7-92e0-8d3f8567ba62/files/695f281b-1d73-4f4b-a413-2d162bd7af1d.jpg",
+      alt: "Групповая тренировка",
+      title: "Групповой заряд",
       description:
-        "Гонишься за личными рекордами или просто встречаешь рассвет на бегу — наше сообщество принимает каждого. От спринтеров до любителей медленного бега, от трейлраннеров до звезд стадиона — здесь найдется место для тебя. Вопрос один: чего ты ждешь?",
+        "Тренироваться в группе — это совсем другая энергия. Музыка, тренер, атмосфера — всё работает на тебя. Именно в группе люди показывают результаты, которых не достигали в одиночку. Попробуй — и ты почувствуешь разницу.",
       layout: "right" as const,
     },
     {
       id: 3,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1FdGyjVpWQANGzsDWpoPIvF5SVI2za.png",
-      alt: "Бегун в динамике, демонстрирующий силу и грацию",
-      title: "Стань частью движения",
+      image: "https://cdn.poehali.dev/projects/96b3053c-bb27-41f7-92e0-8d3f8567ba62/files/2f6845e5-58d6-4ab6-9b40-88a29a8aaa80.jpg",
+      alt: "Результаты тренировок",
+      title: "Реальные результаты",
       description:
-        "Бег — это не только километры, это моменты. Утренние разговоры, общие трудности, коллективные победы. В Stride Collective ты вступаешь не просто в группу — ты становишься частью семьи. Зашнуруй кроссовки, выйди на старт и открой, на что ты способен. Серьезно, чего ты ждешь?",
+        "Сжигание калорий, укрепление сердца, прокачка ног и ягодиц — велотренажёр даёт всё это без ударной нагрузки на суставы. Уже через месяц регулярных тренировок ты увидишь и почувствуешь изменения. Мы в это верим — потому что видели это сотни раз.",
       layout: "left" as const,
     },
   ]
@@ -44,14 +44,13 @@ export default function Index() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Mission Statement Section with Grid Background */}
+      {/* Mission Statement Section */}
       <section id="mission" className="relative min-h-screen flex items-center justify-center py-20 bg-white">
-        {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 bg-grid-subtle opacity-30 pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-black tracking-wider mb-12 text-gray-900">НАША МИССИЯ</h2>
+            <h2 className="text-4xl md:text-6xl font-black tracking-wider mb-12 text-gray-900">НАША ФИЛОСОФИЯ</h2>
             <TextGradientScroll
               text={missionStatement}
               className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed text-gray-800"
@@ -64,15 +63,14 @@ export default function Index() {
 
       {/* Timeline Section */}
       <section id="community" className="relative py-20 bg-white">
-        {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 bg-grid-subtle opacity-30 pointer-events-none" />
 
         <div className="relative z-10">
           <div className="container mx-auto px-6 mb-16">
             <div className="text-center">
-              <h2 className="text-4xl md:text-6xl font-black tracking-wider mb-6 text-gray-900">МЫ РАДЫ КАЖДОМУ</h2>
+              <h2 className="text-4xl md:text-6xl font-black tracking-wider mb-6 text-gray-900">ПОЧЕМУ МЫ</h2>
               <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
-                У каждого бегуна свой путь. Вот лишь несколько историй из нашего открытого сообщества.
+                Три причины, по которым пермяки выбирают велотренажёры в Спортклубе 40.
               </p>
             </div>
           </div>
@@ -83,7 +81,6 @@ export default function Index() {
 
       {/* Testimonials Section */}
       <section id="testimonials" className="relative py-20 bg-white">
-        {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 bg-grid-subtle opacity-30 pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
@@ -96,10 +93,10 @@ export default function Index() {
           >
             <h2 className="text-4xl md:text-6xl font-black tracking-wider text-gray-900 mb-6">
               Что говорят наши{" "}
-              <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">БЕГУНЫ</span>
+              <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">КЛИЕНТЫ</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
-              Реальные истории от реальных бегунов, которые нашли свой ритм вместе со Stride Collective.
+              Реальные отзывы пермяков, которые уже тренируются в Спортклубе 40.
             </p>
           </motion.div>
 
@@ -107,12 +104,12 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Smooth Scroll Hero with CTA Overlay */}
+      {/* Final CTA Section */}
       <section id="join" className="relative">
         <SmoothScrollHero
           scrollHeight={2500}
-          desktopImage="/images/runners-motion-blur.png"
-          mobileImage="/images/runners-motion-blur.png"
+          desktopImage="https://cdn.poehali.dev/projects/96b3053c-bb27-41f7-92e0-8d3f8567ba62/files/b3db1755-78ce-4100-afbd-602eed8fc96c.jpg"
+          mobileImage="https://cdn.poehali.dev/projects/96b3053c-bb27-41f7-92e0-8d3f8567ba62/files/b3db1755-78ce-4100-afbd-602eed8fc96c.jpg"
           initialClipPercentage={30}
           finalClipPercentage={70}
         />

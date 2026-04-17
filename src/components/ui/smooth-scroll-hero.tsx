@@ -26,20 +26,19 @@ const SmoothScrollHero: React.FC<SmoothScrollHeroProps> = ({
     offset: ["start start", "end start"],
   })
 
-  // Clip path animation - image fully reveals by 70% scroll progress
   const clipStart = useTransform(scrollYProgress, [0, 0.7], [initialClipPercentage, 0])
   const clipEnd = useTransform(scrollYProgress, [0, 0.7], [finalClipPercentage, 100])
   const clipPath = useMotionTemplate`polygon(${clipStart}% ${clipStart}%, ${clipEnd}% ${clipStart}%, ${clipEnd}% ${clipEnd}%, ${clipStart}% ${clipEnd}%)`
 
-  // Background size animation - completes when image is fully revealed
   const backgroundSize = useTransform(scrollYProgress, [0, 0.7], ["170%", "100%"])
-
-  // Scale animation - completes when image is fully revealed
   const scale = useTransform(scrollYProgress, [0, 0.7], [1.2, 1])
 
-  // CTA overlay animations - appears earlier and completes by 50%
   const ctaOpacity = useTransform(scrollYProgress, [0.3, 0.5], [0, 1])
   const ctaY = useTransform(scrollYProgress, [0.3, 0.5], [50, 0])
+
+  const scrollToForm = () => {
+    window.open("https://wa.me/73422000000", "_blank")
+  }
 
   return (
     <div ref={containerRef} style={{ height: `${scrollHeight}px` }} className="relative w-full">
@@ -73,8 +72,7 @@ const SmoothScrollHero: React.FC<SmoothScrollHeroProps> = ({
           }}
         />
 
-        {/* Dark overlay for better contrast */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/60" />
 
         {/* CTA Overlay */}
         <motion.div
@@ -85,81 +83,80 @@ const SmoothScrollHero: React.FC<SmoothScrollHeroProps> = ({
           }}
         >
           <div className="text-center text-white max-w-4xl mx-auto px-6">
-            {/* Main CTA Heading */}
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-wider mb-6 leading-none">
               ГОТОВ
               <br />
-              <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
-                БЕЖАТЬ С НАМИ?
+              <span className="bg-gradient-to-r from-blue-400 via-blue-200 to-white bg-clip-text text-transparent">
+                НАЧАТЬ?
               </span>
             </h2>
 
-            {/* Supporting Text */}
             <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed font-medium">
-              Присоединяйся к тысячам бегунов по всему миру, которые нашли свою команду,
+              Запишись на первую тренировку на велотренажёре в Спортклубе 40 —
               <br className="hidden md:block" />
-              раздвинули границы возможного и открыли свой истинный потенциал.
+              и почувствуй разницу уже через 45 минут.
             </p>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               <div className="text-center">
                 <div className="flex justify-center mb-2">
-                  <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Users className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-blue-500/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Users className="w-5 h-5 text-blue-300" />
                   </div>
                 </div>
-                <div className="text-2xl md:text-3xl font-black text-white mb-1">50 000+</div>
-                <div className="text-xs md:text-sm text-gray-300 font-medium">Бегунов</div>
+                <div className="text-2xl md:text-3xl font-black text-white mb-1">500+</div>
+                <div className="text-xs md:text-sm text-gray-300 font-medium">Клиентов</div>
               </div>
 
               <div className="text-center">
                 <div className="flex justify-center mb-2">
-                  <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-blue-500/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-blue-300" />
                   </div>
                 </div>
-                <div className="text-2xl md:text-3xl font-black text-white mb-1">120+</div>
-                <div className="text-xs md:text-sm text-gray-300 font-medium">Городов мира</div>
+                <div className="text-2xl md:text-3xl font-black text-white mb-1">Пермь</div>
+                <div className="text-xs md:text-sm text-gray-300 font-medium">Наш город</div>
               </div>
 
               <div className="text-center">
                 <div className="flex justify-center mb-2">
-                  <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Calendar className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-blue-500/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Calendar className="w-5 h-5 text-blue-300" />
                   </div>
                 </div>
-                <div className="text-2xl md:text-3xl font-black text-white mb-1">365</div>
-                <div className="text-xs md:text-sm text-gray-300 font-medium">Дней в году</div>
+                <div className="text-2xl md:text-3xl font-black text-white mb-1">7 дней</div>
+                <div className="text-xs md:text-sm text-gray-300 font-medium">В неделю</div>
               </div>
 
               <div className="text-center">
                 <div className="flex justify-center mb-2">
-                  <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Trophy className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-blue-500/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Trophy className="w-5 h-5 text-blue-300" />
                   </div>
                 </div>
-                <div className="text-2xl md:text-3xl font-black text-white mb-1">10 000+</div>
-                <div className="text-xs md:text-sm text-gray-300 font-medium">Целей достигнуто</div>
+                <div className="text-2xl md:text-3xl font-black text-white mb-1">45 мин</div>
+                <div className="text-xs md:text-sm text-gray-300 font-medium">Одна тренировка</div>
               </div>
             </div>
 
             {/* CTA Button */}
             <LiquidButton
               size="xxl"
-              className="font-bold text-xl tracking-wide px-12 py-4 bg-gray-900 hover:bg-gray-800 text-white border-2 border-gray-900 hover:scale-105 transition-all duration-300"
+              className="font-bold text-xl tracking-wide px-12 py-4 bg-blue-600 hover:bg-blue-500 text-white border-2 border-blue-500 hover:scale-105 transition-all duration-300"
+              onClick={scrollToForm}
             >
-              ВСТУПИТЬ В STRIDE
+              ЗАПИСАТЬСЯ НА ТРЕНИРОВКУ
             </LiquidButton>
 
             {/* Trust Indicators */}
             <div className="mt-12 pt-6 border-t border-white/20">
-              <p className="text-xs text-gray-400 mb-3 font-medium">НАМ ДОВЕРЯЮТ БЕГУНЫ ПО ВСЕМУ МИРУ</p>
+              <p className="text-xs text-gray-400 mb-3 font-medium">СПОРТКЛУБ 40 · ПЕРМЬ</p>
               <div className="flex flex-wrap justify-center items-center gap-4 text-gray-300">
                 <span className="text-xs font-semibold">ДЛЯ НОВИЧКОВ</span>
-                <span className="text-xs font-semibold">МИРОВОЕ СООБЩЕСТВО</span>
-                <span className="text-xs font-semibold">ПРОВЕРЕННЫЕ РЕЗУЛЬТАТЫ</span>
-                <span className="text-xs font-semibold">БЕСПЛАТНО</span>
+                <span className="text-xs font-semibold">ПРОФЕССИОНАЛЬНЫЕ ТРЕНЕРЫ</span>
+                <span className="text-xs font-semibold">СОВРЕМЕННЫЕ ТРЕНАЖЁРЫ</span>
+                <span className="text-xs font-semibold">БЕЗ НАГРУЗКИ НА СУСТАВЫ</span>
               </div>
             </div>
           </div>
